@@ -33,6 +33,9 @@ const Search = styled.div`
 const Input = styled.input`
   border: none;
   background-color: transparent;
+  color: ${({ theme }) => theme.text};
+  outline: none;
+  font-size: 20px;
   width: 100%;
 `;
 const Button = styled.button`
@@ -55,7 +58,7 @@ const Navbar = () => {
       <Wrapper>
         <Search>
           <Input placeholder="Search" />
-          <SearchIcon />
+          <SearchIcon style={{ color: "#999" }} />
         </Search>
         <Button>
           <AccountCircleIcon /> SIGN IN
