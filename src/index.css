@@ -17,3 +17,8 @@ code {
   width: 0px;
   background-color: grey;
 }
+
+
+.dYdoTx:focus{
+  outline: none !important;
+}
