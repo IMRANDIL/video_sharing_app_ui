@@ -16,6 +16,7 @@ import ReportIcon from "@mui/icons-material/Report";
 import HelpIcon from "@mui/icons-material/Help";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 const Container = styled.div`
   flex: 1.2;
@@ -41,7 +42,7 @@ const Logo = styled.div`
 
 const Img = styled.img`
   height: 60px;
-  width: 100px;
+  width: 100%;
 `;
 
 const Hr = styled.hr`
@@ -51,7 +52,6 @@ const Hr = styled.hr`
 
 const Login = styled.div`
   display: flex;
-  color: black;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -77,9 +77,15 @@ const Item = styled.div`
   align-items: center;
   gap: 30px;
   cursor: pointer;
-  color: black;
   padding: 7.5px 0;
 `;
+
+/* const Title = styled.h2`
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+`; */
 
 const Menu = ({ darkMode, setDarkMode }) => {
   return (
@@ -88,15 +94,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
         <Logo>
           <Img src={logoImg} draggable="false" />
         </Logo>
-
         <Item>
           <HomeIcon /> Home
         </Item>
-
         <Item>
           <ExploreIcon /> Explore
         </Item>
-
         <Item>
           <SubscriptionsIcon /> Subscriptions
         </Item>
@@ -115,10 +118,10 @@ const Menu = ({ darkMode, setDarkMode }) => {
           </Button>
         </Login>
         <Hr />
+
         <Item>
           <LibraryMusicIcon /> Music
         </Item>
-
         <Item>
           <SportsEsportsIcon /> Sports
         </Item>
@@ -138,13 +141,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
         <Item>
           <ReportIcon /> Report
         </Item>
-
         <Item>
           <HelpIcon /> Help
         </Item>
-
-        <Item onClick={() => setDarkMode(true)}>
-          <LightModeIcon /> Light Mode
+        <Item onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? <LightModeIcon /> : <DarkModeIcon />}{" "}
+          {darkMode ? "Light Mode" : "Dark Mode"}
         </Item>
       </Wrapper>
     </Container>
