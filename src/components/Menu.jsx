@@ -81,7 +81,7 @@ const Item = styled.div`
   padding: 7.5px 0;
 `;
 
-const Menu = () => {
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
@@ -143,7 +143,7 @@ const Menu = () => {
           <HelpIcon /> Help
         </Item>
 
-        <Item>
+        <Item onClick={() => setDarkMode(true)}>
           <LightModeIcon /> Light Mode
         </Item>
       </Wrapper>
